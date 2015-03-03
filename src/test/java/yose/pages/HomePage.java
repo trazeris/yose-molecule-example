@@ -19,9 +19,9 @@ public class HomePage {
         return this;
     }
 
-    public AsyncWebDriver openGithub() {
+    public GitHubPage openGithub() {
         AsyncElementDriver element = browser.element(By.id("repository-link"));
         element.click();
-        return browser;
+        return new GitHubPage(browser);
     }
 }
