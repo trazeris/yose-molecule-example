@@ -18,7 +18,7 @@ public class HomePageTest {
     
     String homePage;
     //enter here your github user account name
-    final String projectName = "wagonli";
+    final String projectName = "trazeris";
     
     @Before
     public void getFileContent() throws IOException {
