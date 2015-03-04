@@ -3,7 +3,10 @@ package yose;
 import com.objogate.wl.UnsynchronizedProber;
 import com.objogate.wl.web.AsyncWebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import yose.pages.AstroportPage;
 import yose.pages.HomePage;
+import yose.pages.MinesweeperPage;
+import yose.worlds.Minesweeper;
 
 import java.io.IOException;
 
@@ -35,6 +38,16 @@ public class YoseDriver {
     public HomePage home() {
         browser().navigate().to(url("/"));
         return new HomePage(browser);
+    }
+    
+    public AstroportPage astroport() {
+        browser().navigate().to(url("/astroport"));
+        return new AstroportPage(browser);
+    }
+
+    public MinesweeperPage minesweeper() {
+        browser().navigate().to(url("/minesweeper"));
+        return new MinesweeperPage(browser);
     }
 
     private String url(String path) {

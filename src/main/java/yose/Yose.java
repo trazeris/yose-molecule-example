@@ -26,8 +26,13 @@ public class Yose {
             {
                 response.body(new FileBody(new File("src/main/webapp/HomePage.html")));
             });
+            get("/minesweeper").to((request, response) ->
+            {
+                response.body(new FileBody(new File("src/main/webapp/MinesweeperPage.html")));
+            });
             get("/ping").to(new Ping(gson)::pong);
             get("/primeFactors").to(new PrimeFactors(gson)::powerOfTwoChallenge);
+            get("/astroport").to(new Astroport()::astroportNameChallenge);
         }});
     }
 
