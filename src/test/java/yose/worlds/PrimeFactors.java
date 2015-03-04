@@ -38,4 +38,13 @@ public class PrimeFactors {
                 .hasBodyText("{\"number\":4,\"decomposition\":[2,2]}");
     }
 
+
+    @Test
+    public void stringGuardChallenge() throws IOException {
+        response = request.get("/primeFactors?number=hello");
+
+        assertThat(response).isOK()
+                .hasContentType("application/json")
+                .hasBodyText("{\"number\":\"hello\",\"error\":\"not a number\"}");
+    }
 }

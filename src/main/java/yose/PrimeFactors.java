@@ -18,8 +18,17 @@ public class PrimeFactors {
     }
 
     public void powerOfTwoChallenge(Request request, Response response) throws Exception {
-       response.contentType(JSON).body(gson.toJson(new Decomposition(Integer.parseInt(request.parameter("number")))));
-
+       String parameter = request.parameter("number");
+       if (parameter== null) {
+           response.statusCode(400);
+           return;
+       }
+       try {
+            Integer number = Integer.parseInt(parameter);
+            response.contentType(JSON).body(gson.toJson(new Decomposition(number)));
+       } catch (NumberFormatException e) {
+            response.contentType(JSON).body(gson.toJson(new Error(parameter)));
+       }
     }
     public static class Decomposition {
         public Integer number = 0;
@@ -30,4 +39,17 @@ public class PrimeFactors {
             decomposition = PrimeFactor.powerOfTwoDecomposition(number);
         }
     }
+
+    public static class Error {
+        public String number;
+        public String error = "not a number";
+
+        public Error(String number) {
+            this.number = number;
+
+        }
+
+    }
+
+
 }

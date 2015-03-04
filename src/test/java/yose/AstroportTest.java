@@ -1,17 +1,14 @@
 package yose;
 
-import jdk.internal.org.xml.sax.SAXException;
 import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.testinfected.hamcrest.dom.DomMatchers;
-import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import java.io.File;
 import java.io.IOException;
 
-import static org.hamcrest.Matchers.containsString;
 import static org.junit.Assert.assertThat;
 
 /**
