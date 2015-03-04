@@ -24,4 +24,11 @@ public class HomePage {
         element.click();
         return new GitHubPage(browser);
     }
+
+    public PersonalInfoPage visitsPersonalProfile() {
+        AsyncElementDriver element = browser.element(By.cssSelector("a#contact-me-link"));
+        element.click();
+        
+        return new PersonalInfoPage(browser);
+    }
 }

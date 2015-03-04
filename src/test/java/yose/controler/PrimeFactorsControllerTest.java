@@ -25,7 +25,7 @@ public class PrimeFactorsControllerTest {
     }
 
     @Test
-    public void alwaysResponseWithJson() throws Exception {
+    public void alwaysRespondWithJson() throws Exception {
         request.addParameter("number","4");
         primeFactor.powerOfTwoChallenge(request, response);
         assertThat(response).hasContentType("application/json");
