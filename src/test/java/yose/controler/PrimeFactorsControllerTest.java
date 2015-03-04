@@ -12,7 +12,7 @@ import static com.vtence.molecule.testing.ResponseAssert.assertThat;
 /**
  * Created by formation on 04/03/15.
  */
-public class PrimeFactorsControlerTest {
+public class PrimeFactorsControllerTest {
 
     private PrimeFactors primeFactor;
     private Response response = new Response() ;
